@@ -119,5 +119,3 @@ document
       console.error("Login request failed:", error);
     }
   });
-
-document.getElementById("")
