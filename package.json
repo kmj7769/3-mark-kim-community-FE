@@ -1,0 +1,25 @@
+{
+  "name": "any-word-community-frontend",
+  "version": "1.0.0",
+  "description": "아무말대잔치 커뮤니티 서비스 프론트엔드",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kmj7769/3-mark-kim-community-frontend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kmj7769/3-mark-kim-community-frontend/issues"
+  },
+  "homepage": "https://github.com/kmj7769/3-mark-kim-community-frontend#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
