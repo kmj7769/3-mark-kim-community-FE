@@ -9,6 +9,7 @@ let passwordValid = false;
 
 const loginSubmitButton = document.getElementById("login-submit-button");
 
+// 유효성 검사 후 폼 제출 버튼 활성화
 function checkFormValidity() {
   if (emailValid && passwordValid) {
     loginSubmitButton.disabled = false;
