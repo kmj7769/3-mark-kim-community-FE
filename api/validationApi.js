@@ -37,4 +37,37 @@ async function fetchValidation(type, value) {
   }
 }
 
-export { emailValidation, passwordValidation, nicknameValidation };
+// 비밀번호 확인 api 호출 함수
+async function fetchPasswordCheck(password, passwordCheck) {
+  try {
+    const response = await fetch(
+      "http://localhost:8080/validation/password-check",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          password: password,
+          passwordCheck: passwordCheck,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error during password check:", error);
+    throw error;
+  }
+}
+
+export {
+  emailValidation,
+  passwordValidation,
+  nicknameValidation,
+  fetchPasswordCheck,
+};
