@@ -1,14 +1,7 @@
-import {
-  emailValidation,
-  passwordValidation,
-} from "../../../api/validationApi.js";
+import { emailValidation, passwordValidation } from "/api/validationApi.js";
 
-import { fetchLogin } from "../../../api/authApi.js";
-
-// 헬퍼 텍스트 추가 함수
-function setHelperText(elementId, message) {
-  document.getElementById(elementId).textContent = message;
-}
+import { fetchLogin } from "/api/authApi.js";
+import { setHelperText } from "../../../components/helperText.js";
 
 // 유효성 검사 상태 변수
 let emailValid = false;

@@ -6,24 +6,26 @@
   <body>
     <form id="login-form">
       <label for="email">이메일</label>
+      <br />
       <input type="text" id="email" name="email" required />
-      <small id="email-help" class="helper-message"></small>
-      <br /><br />
+      <br />
+      <small id="email-help" class="helper-message"
+        >올바른 이메일 주소 형식을 입력해주세요.</small
+      >
+      <br />
       <label for="password">비밀번호</label>
-      <input
-        type="password"
-        id="password"
-        name="password"
-        required
-      /><br /><br />
+      <br />
+      <input type="password" id="password" name="password" required />
+      <br />
       <small id="password-help" class="helper-message"
         >비밀번호를 입력해주세요</small
-      ><br /><br />
+      >
+      <br />
       <button id="login-submit-button" type="submit" disabled>로그인</button>
     </form>
     <button
       type="button"
-      onClick="window.location.href='../register/register.html'"
+      onClick="window.location.href='/pages/register/register.html'"
     >
       회원가입
     </button>
