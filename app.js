@@ -4,6 +4,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use("/api", express.static(path.join(__dirname, "api")));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/pages/login/", "login.html"));
