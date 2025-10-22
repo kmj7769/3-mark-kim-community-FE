@@ -1,6 +1,8 @@
+import { backendUrl } from "/config/config.js";
+
 async function fetchRegister(userData) {
   try {
-    const response = await fetch("http://localhost:8080/users", {
+    const response = await fetch(backendUrl + "/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

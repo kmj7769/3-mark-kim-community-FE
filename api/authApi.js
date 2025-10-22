@@ -1,7 +1,9 @@
+import { backendUrl } from "/config/config.js";
+
 // 로그인 api 호출 함수
 async function fetchLogin(email, password) {
   try {
-    const response = await fetch("http://localhost:8080/auth", {
+    const response = await fetch(backendUrl + "/auth", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

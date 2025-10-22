@@ -1,3 +1,5 @@
+import { backendUrl } from "/config/config.js";
+
 // 이메일 검증 api 호출 함수
 function emailValidation(data) {
   return fetchValidation("email", data);
@@ -16,7 +18,7 @@ function nicknameValidation(data) {
 // 검증 api 호출 함수
 async function fetchValidation(type, value) {
   try {
-    const response = await fetch(`http://localhost:8080/validation/${type}`, {
+    const response = await fetch(`${backendUrl}/validation/${type}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
