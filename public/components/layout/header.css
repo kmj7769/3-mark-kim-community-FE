@@ -1,0 +1,15 @@
+header {
+  width: 100%;
+  background: #eee;
+  border-bottom: 1px solid #888;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+}

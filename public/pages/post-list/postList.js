@@ -1,6 +1,9 @@
 import { fetchPostList } from "/api/postListApi.js";
 
 import { postItem } from "/pages/post-list/components/postItem.js";
+import { addHeader } from "/components/layout/header.js";
+
+addHeader();
 
 let lastFetchId = null;
 const limit = 15;

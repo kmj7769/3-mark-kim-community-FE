@@ -7,6 +7,9 @@ import {
 
 import { setHelperText } from "/components/helperText.js";
 import { fetchRegister } from "/api/userApi.js";
+import { addHeader } from "/components/layout/header.js";
+
+addHeader();
 
 // 프로필 이미지 파일 변수
 let profileImageFile = null;
