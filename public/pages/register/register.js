@@ -5,7 +5,7 @@ import {
   fetchPasswordCheck,
 } from "/api/validationApi.js";
 
-import { setHelperText } from "../../components/helperText.js";
+import { setHelperText } from "/components/helperText.js";
 import { fetchRegister } from "/api/userApi.js";
 
 // 프로필 이미지 파일 변수
