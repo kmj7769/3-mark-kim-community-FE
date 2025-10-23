@@ -113,6 +113,12 @@ document
       const result = await fetchLogin(email, password);
       if (result.code === 200) {
         console.log("Login successful:", result);
+
+        // 브라우저 세션 스토리지에 로그인한 유저 아이디 저장
+        // 인증/인가에 대해 배우면 수정
+        const session = window.sessionStorage;
+        session.setItem("userId", result.data.userId);
+
         window.location.href = "/pages/post-list/post_list.html";
       } else if (result.code === 401) {
         console.log("Login failed:", result);
