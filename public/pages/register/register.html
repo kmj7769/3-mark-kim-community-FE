@@ -1,72 +1,103 @@
-<html>
+<!DOCTYPE html>
+<html lang="ko">
   <head>
+    <meta charset="UTF-8" />
     <title>회원가입</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/components/layout/header.css" />
+    <link rel="stylesheet" href="/pages/register/register.css" />
   </head>
   <body>
-    <h1>회원가입</h1>
-    <label for="upload-image" style="pointer-events: none">프로필 사진</label>
-    <br />
-    <small id="image-help" class="helper-message"></small>
-    <br />
-    <input
-      type="file"
-      id="upload-image"
-      name="upload-image"
-      accept="image/*"
-      style="display: none"
-    />
-    <br />
-    <div
-      id="profile-image-container"
-      style="width: 100px; height: 100px; background-color: lightgray"
-    ></div>
-    <br />
-    <form id="register-form">
-      <label for="email">이메일*</label>
-      <br />
-      <input type="email" id="email" name="email" required />
-      <br />
-      <small id="email-help" class="helper-message"
-        >이메일을 입력해주세요</small
-      >
-      <br />
-      <label for="password">비밀번호*</label>
-      <br />
-      <input type="password" id="password" name="password" required />
-      <br />
-      <small id="password-help" class="helper-message"
-        >비밀번호를 입력해주세요</small
-      >
-      <br />
-      <label for="password-check">비밀번호 확인*</label>
-      <br />
-      <input
-        type="password"
-        id="password-check"
-        name="password-check"
-        required
-      />
-      <br />
-      <small id="password-check-help" class="helper-message"></small>
-      <br />
-      <label for="nickname">닉네임*</label>
-      <br />
-      <input type="text" id="nickname" name="nickname" required />
-      <br />
-      <small id="nickname-help" class="helper-message"
-        >닉네임을 입력해주세요</small
-      ><br /><br />
-      <br />
-      <button id="register-submit-button" type="submit" disabled>
-        회원가입
-      </button>
-    </form>
-    <button
-      type="button"
-      onclick="window.location.href='/pages/login/login.html'"
-    >
-      로그인하러 가기
-    </button>
+    <main class="register-container">
+      <div class="register-box">
+        <h2 class="register-title">회원가입</h2>
+        <section class="profile-section">
+          <label for="upload-image" class="profile-label">프로필 사진</label>
+          <input
+            type="file"
+            id="upload-image"
+            name="upload-image"
+            accept="image/*"
+            style="display: none"
+          />
+          <div id="profile-image-container" class="profile-image-container">
+            <span class="profile-plus">+</span>
+          </div>
+        </section>
+
+        <form id="register-form" class="register-form">
+          <div class="form-group">
+            <label for="email">이메일*</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="이메일을 입력하세요"
+              required
+            />
+            <small id="email-help" class="helper-message"
+              >이메일을 입력해주세요</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="password">비밀번호*</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호를 입력하세요"
+              required
+            />
+            <small id="password-help" class="helper-message"
+              >비밀번호를 입력해주세요</small
+            >
+          </div>
+          <div class="form-group">
+            <label for="password-check">비밀번호 확인*</label>
+            <input
+              type="password"
+              id="password-check"
+              name="password-check"
+              placeholder="비밀번호를 한번 더 입력하세요"
+              required
+            />
+            <small id="password-check-help" class="helper-message"></small>
+          </div>
+          <div class="form-group">
+            <label for="nickname">닉네임*</label>
+            <input
+              type="text"
+              id="nickname"
+              name="nickname"
+              placeholder="닉네임을 입력하세요"
+              required
+            />
+            <small id="nickname-help" class="helper-message"
+              >닉네임을 입력해주세요</small
+            >
+          </div>
+          <button
+            id="register-submit-button"
+            type="submit"
+            class="btn-register"
+            disabled
+          >
+            회원가입
+          </button>
+        </form>
+        <button
+          type="button"
+          class="btn-login"
+          onclick="window.location.href='/pages/login/login.html'"
+        >
+          로그인하러 가기
+        </button>
+      </div>
+    </main>
     <script type="module" src="/pages/register/register.js"></script>
   </body>
 </html>

@@ -1,0 +1,141 @@
+/* 전역 스타일 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 메인 컨테이너 */
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 20px 40px;
+}
+
+/* 로그인 박스 */
+.login-box {
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* 폼 그룹 */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.form-group input:focus {
+  border-color: #7b9cff;
+}
+
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+/* 헬퍼 메시지 */
+.helper-message {
+  display: block;
+  font-size: 0.8rem;
+  color: #ff6b6b;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* 로그인 버튼 */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #7b9cff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.btn-login:hover:not(:disabled) {
+  background-color: #6b8ef5;
+}
+
+.btn-login:disabled {
+  background-color: #b0c4ff;
+  cursor: not-allowed;
+}
+
+/* 회원가입 버튼 */
+.btn-register {
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background-color 0.2s;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.btn-register:hover {
+  background-color: #ff5252;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+}

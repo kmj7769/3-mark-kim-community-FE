@@ -1,27 +1,29 @@
+<!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
     <title>게시판</title>
+    <link rel="stylesheet" href="/components/layout/header.css" />
+    <link rel="stylesheet" href="/pages/post-list/post_list.css" />
   </head>
-  <body
-    style="
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      margin-top: 0;
-      margin-bottom: 0;
-    "
-  >
-    <h2>안녕하세요,<br />아무 말 <strong>대잔치</strong> 게시판 입니다.</h2>
-    <button
-      type="button"
-      onClick="window.location.href='/pages/post/post.html'"
-    >
-      게시글 작성
-    </button>
-    <section
-      style="flex: 1; overflow-y: auto"
-      id="post-list-container"
-    ></section>
+  <body>
+    <div class="main-body-container">
+      <h2 class="post-list-title">
+        <p>안녕하세요</p>
+        <p>아무 말 대잔치 <strong>게시판</strong>입니다.</p>
+      </h2>
+      <div class="write-button-container">
+        <button
+          class="write-button"
+          type="button"
+          onClick="window.location.href='/pages/post/post.html'"
+        >
+          게시글 작성
+        </button>
+      </div>
+      <section id="post-list-container" class="post-list"></section>
+    </div>
     <script type="module" src="/pages/post-list/postList.js"></script>
   </body>
 </html>

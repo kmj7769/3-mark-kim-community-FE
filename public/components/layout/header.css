@@ -1,15 +1,47 @@
-header {
+/* 공통 헤더 스타일 */
+.page-header {
   width: 100%;
-  background: #eee;
-  border-bottom: 1px solid #888;
-  height: 70px;
+  height: 62px;
+  background: #ffffff;
+  border-bottom: 1px solid #dbdbdb;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
-header h1 {
+.site-title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #222;
+  letter-spacing: 1px;
+}
+
+.back-btn {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
   font-size: 2rem;
-  font-weight: normal;
-  letter-spacing: 2px;
+  color: #444;
+  cursor: pointer;
+  padding: 8px 12px;
+  z-index: 110;
+  transition: color 0.2s;
+}
+
+.back-btn:hover {
+  color: #000;
+}
+
+/* 뒤로가기 버튼 숨김 클래스 */
+.hide-back-btn .back-btn {
+  display: none;
 }
