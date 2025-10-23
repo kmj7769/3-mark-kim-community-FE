@@ -87,6 +87,10 @@ body {
   transition: background 0.2s;
 }
 
+.profile-image-container img {
+  object-fit: cover;
+}
+
 .profile-image-container:hover {
   background: #c0c0c0;
 }
