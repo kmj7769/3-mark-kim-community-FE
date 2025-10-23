@@ -21,4 +21,20 @@ async function fetchRegister(userData) {
   }
 }
 
-export { fetchRegister };
+async function fetchUserInfo(userId) {
+  try {
+    const response = await fetch(backendUrl + `/users?userId=${userId}`, {
+      method: "GET",
+    });
+
+    if (response.status !== 200) {
+      throw new Error("Network response was not ok");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(`Error during user info fetch`, error);
+  }
+}
+
+export { fetchRegister, fetchUserInfo };

@@ -45,3 +45,14 @@
 .hide-back-btn .back-btn {
   display: none;
 }
+
+.header-profile-image-container img {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  object-fit: cover;
+}
