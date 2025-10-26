@@ -1,7 +1,7 @@
-import { fetchUserInfo } from "/api/userApi.js";
+import { backendUrl } from "/config/config.js";
 
 async function addHeader() {
-  await fetch("/components/layout/header.html")
+  await fetch("/components/layout/header/header.html")
     .then((res) => res.text())
     .then((html) => {
       document.body.insertAdjacentHTML("afterbegin", html);
@@ -23,8 +23,6 @@ async function addHeader() {
       profileImageSrc.trim() === ""
         ? "/assets/images/default_profile_img.jpeg"
         : profileImageSrc;
-
-    console.log(newImage.src);
 
     profileImageContainer.appendChild(newImage);
   }

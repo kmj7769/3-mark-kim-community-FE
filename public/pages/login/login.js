@@ -2,9 +2,12 @@ import { emailValidation, passwordValidation } from "/api/validationApi.js";
 
 import { fetchLogin } from "/api/authApi.js";
 import { setHelperText } from "/components/helperText.js";
-import { addHeader } from "/components/layout/header.js";
+import { addHeader } from "/components/layout/header/header.js";
+import { addFooter } from "/components/layout/footer/footer.js";
 
 addHeader();
+
+addFooter();
 
 // 유효성 검사 상태 변수
 let emailValid = false;
