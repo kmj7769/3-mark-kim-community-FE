@@ -14,13 +14,17 @@ async function addHeader() {
 
     const newImage = document.createElement("img");
     newImage.alt = "프로필 사진";
-    const userInfo = await fetchUserInfo(
-      window.sessionStorage.getItem("userId")
-    );
+    const profileImageSrc = window.localStorage.getItem("profileImage");
+
     newImage.src =
-      userInfo.data.profileImage == null
+      profileImageSrc === null ||
+      profileImageSrc === undefined ||
+      profileImageSrc === "null" ||
+      profileImageSrc.trim() === ""
         ? "/assets/images/default_profile_img.jpeg"
-        : userInfo.data.profileImage;
+        : profileImageSrc;
+
+    console.log(newImage.src);
 
     profileImageContainer.appendChild(newImage);
   }

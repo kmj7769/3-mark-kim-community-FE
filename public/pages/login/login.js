@@ -119,6 +119,10 @@ document
         const session = window.sessionStorage;
         session.setItem("userId", result.data.userId);
 
+        const localStorage = window.localStorage;
+        localStorage.setItem("nickname", result.data.nickname);
+        localStorage.setItem("profileImage", result.data.profileImage);
+
         window.location.href = "/pages/post-list/post_list.html";
       } else if (result.code === 401) {
         console.log("Login failed:", result);
