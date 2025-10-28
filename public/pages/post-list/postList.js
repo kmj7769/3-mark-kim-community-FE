@@ -17,8 +17,9 @@ async function loadPost() {
 
     result.data.posts.forEach((post) => {
       postItem(post);
-      lastFetchId = post.postId;
     });
+
+    lastFetchId = result.data.lastFetchId;
   } catch (error) {
     console.error("Retrieving post list failed:", error);
   }
