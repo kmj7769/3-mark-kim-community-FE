@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0" />
+    <title>게시판</title>
+    <link rel="stylesheet" href="/components/layout/header/header.css" />
+    <link rel="stylesheet" href="/pages/post-detail/post_detail.css" />
+    <link
+      rel="stylesheet"
+      href="/pages/post-detail/components/comment-item/comment_item.css"
+    />
+  </head>
+  <body>
+    <main class="post-detail-main">
+      <section class="post-detail-section">
+        <!-- 게시글 상단 정보 -->
+        <div class="post-detail-header">
+          <img
+            id="post-profile-img"
+            class="post-detail-profile"
+            src=""
+            alt="프로필 이미지"
+          />
+          <div class="post-detail-author-info">
+            <div id="post-author-name" class="post-detail-author-name"></div>
+            <div id="post-date" class="post-detail-date"></div>
+          </div>
+          <div id="post-action-btns" class="post-detail-action-btns">
+            <button
+              id="post-edit-btn"
+              class="detail-edit-btn"
+              style="display: none"
+            >
+              수정
+            </button>
+            <button
+              id="post-delete-btn"
+              class="detail-delete-btn"
+              style="display: none"
+            >
+              삭제
+            </button>
+          </div>
+        </div>
+
+        <!-- 게시글 제목 -->
+        <h2 id="post-title" class="post-detail-title"></h2>
+
+        <!-- 게시글 이미지 -->
+        <div
+          id="post-image-container"
+          class="post-detail-image-container"
+          style="display: none"
+        ></div>
+
+        <!-- 게시글 본문 -->
+        <div id="post-content" class="post-detail-content"></div>
+
+        <!-- 좋아요, 조회수, 댓글수 -->
+        <div class="post-detail-meta">
+          <button id="like-btn" class="post-detail-meta-box">
+            <span id="like-count" class="meta-count"></span>
+            <span class="meta-label">좋아요수</span>
+          </button>
+          <div class="post-detail-meta-box">
+            <span id="view-count" class="meta-count"></span>
+            <span class="meta-label">조회수</span>
+          </div>
+          <div class="post-detail-meta-box">
+            <span id="comment-count" class="meta-count"></span>
+            <span class="meta-label">댓글</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="comment-section">
+        <!-- 댓글 입력박스 -->
+        <div class="comment-input-box">
+          <textarea
+            class="comment-textarea"
+            rows="3"
+            placeholder="댓글을 남겨주세요!"
+          ></textarea>
+          <button class="comment-submit-btn">댓글 등록</button>
+        </div>
+
+        <!-- 댓글 목록 -->
+        <ul id="comment-list-container" class="comment-list"></ul>
+      </section>
+    </main>
+    <script type="module" src="/pages/post-detail/postDetail.js"></script>
+  </body>
+</html>

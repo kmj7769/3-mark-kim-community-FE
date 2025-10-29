@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+
+.comment-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fafafa;
+  border: 1px solid #ececec;
+  margin-right: 14px;
+}
+.comment-body {
+  flex: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-info {
+  font-size: 0.97rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-author {
+  font-weight: 500;
+  margin-right: 7px;
+  color: #222;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-date {
+  color: #bbb;
+  font-size: 0.92rem;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-content {
+  font-size: 1.03rem;
+  color: #222;
+  margin-bottom: 6px;
+  word-break: break-all;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-action-btns {
+  display: flex;
+  gap: 8px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-edit-btn,
+.comment-delete-btn {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  font-size: 0.93rem;
+  color: #888;
+  padding: 3px 12px;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s, color 0.2s;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-edit-btn:hover,
+.comment-delete-btn:hover {
+  background: #eee;
+  color: #444;
+}

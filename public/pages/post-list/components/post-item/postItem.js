@@ -1,7 +1,8 @@
 // 게시글 목록에 컴포넌트 추가
 function postItem(parentId, post) {
   document.getElementById(parentId).innerHTML += `
-        <a class="card" href="/pages/post-detail/post_detail.html?postId=${post.postId}"}>
+        <div class="card">
+            <a href="/pages/post-detail/post_detail.html?postId=${post.postId}" />
             <div class="card-header">
                 <div class="card-title">${post.title}</div>
                 <div class="card-meta">
@@ -15,7 +16,7 @@ function postItem(parentId, post) {
                 <img class="card-profile" src="${post.profileImage}" alt="프로필 이미지" />
                 <span class="card-author-name">${post.userNickname}</span>
             </div>
-        </a>
+        </div>
     `;
 }
 

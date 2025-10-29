@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-main {
+  margin-top: 62px;
+  /* 푸터(60px) + 여유(30px) 하단 패딩 */
+  padding: 24px 0 90px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 24px;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 1px solid #ebeaea;
+  background: #fafafa;
+}
+
+.post-detail-author-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-detail-author-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-date {
+  font-size: 0.87rem;
+  color: #999;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-action-btns {
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+}
+
+.detail-edit-btn,
+.detail-delete-btn {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 6px;
+  font-size: 0.96rem;
+  color: #666;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  z-index: 2;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.detail-edit-btn:hover,
+.detail-delete-btn:hover {
+  background: #eee;
+  color: #000;
+}
+
+.post-detail-title {
+  margin: 0 0 16px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  word-break: break-all;
+  z-index: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-image-container {
+  width: 100%;
+  height: 260px;
+  background: #e9e9e9;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.post-detail-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.post-detail-content {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 22px;
+  line-height: 1.8;
+  word-break: break-all;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-detail-meta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+  z-index: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.post-detail-meta-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 86px;
+  padding: 11px 0;
+  border-radius: 10px;
+  background: #f4f4f4;
+  font-size: 1.2rem;
+  color: #444;
+  border: none;
+  cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.meta-count {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 2px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.meta-label {
+  font-size: 0.94rem;
+  color: #888;
+  margin-top: 3px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.comment-section {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 24px 18px;
+  z-index: 1;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.comment-input-box {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.comment-textarea {
+  flex: 1;
+  min-height: 52px;
+  max-height: 120px;
+  resize: vertical;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-submit-btn {
+  padding: 7px 18px;
+  font-size: 1rem;
+  background: #e94676;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 500;
+  z-index: 3;
+  transition: background 0.2s;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.comment-submit-btn:hover {
+  background: #d53c6a;
+}
+
+.comment-list {
+  /* 댓글 입력박스 제외한 영역만 스크롤 */
+  max-height: 320px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  padding-top: 15px;
+  list-style: none;
+  font-family: "Noto Sans KR", sans-serif;
+  border-top: 1px solid #eee;
+  /* 필요시 border-top으로 시각적 구분 */
+  border-bottom: 1px solid #eee;
+}
