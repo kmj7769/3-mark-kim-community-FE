@@ -1,6 +1,6 @@
 import { fetchPostList } from "/api/postListApi.js";
 
-import { postItem } from "/components/post-item/postItem.js";
+import { postItem } from "/pages/post-list/components/post-item/postItem.js";
 import { addHeader } from "/components/layout/header/header.js";
 import { addFooter } from "/components/layout/footer/footer.js";
 
