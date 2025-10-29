@@ -1,6 +1,6 @@
 // 게시글 목록에 컴포넌트 추가
-function postItem(post) {
-  document.getElementById("post-list-container").innerHTML += `
+function postItem(parentId, post) {
+  document.getElementById(parentId).innerHTML += `
         <div class="card">
             <div class="card-header">
                 <div class="card-title">${post.title}</div>
