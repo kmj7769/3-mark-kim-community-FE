@@ -1,9 +1,16 @@
-function commentItem(parentId, comment) {
-  document.getElementById(parentId).innerHTML += `
+function commentItemTemplate(comment) {
+  return `
           <li class="comment-item">
             <img
               class="comment-profile"
-              src="${comment.profileImage}"
+              src="${
+                comment.profileImage === null ||
+                comment.profileImage === undefined ||
+                comment.profileImage === "null" ||
+                comment.profileImage.trim() === ""
+                  ? "/assets/images/default_profile_img.jpeg"
+                  : comment.profileImage
+              }"
               alt="프로필 이미지"
             />
             <div class="comment-body">
@@ -21,4 +28,13 @@ function commentItem(parentId, comment) {
     `;
 }
 
-export { commentItem };
+function commentItem(parentId, comment) {
+  document.getElementById(parentId).innerHTML += commentItemTemplate(comment);
+}
+
+function addCommentItemFront(parentId, comment) {
+  const container = document.getElementById(parentId);
+  container.insertBefore(commentItemTemplate(comment), container.firstChild);
+}
+
+export { commentItem, addCommentItemFront };

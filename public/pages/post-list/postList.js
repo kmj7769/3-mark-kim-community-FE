@@ -1,4 +1,4 @@
-import { fetchPostList } from "/api/postListApi.js";
+import { fetchPostList } from "/api/postApi.js";
 
 import { postItem } from "/pages/post-list/components/post-item/postItem.js";
 import { addHeader } from "/components/layout/header/header.js";

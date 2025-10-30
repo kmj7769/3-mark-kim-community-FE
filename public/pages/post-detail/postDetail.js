@@ -1,5 +1,5 @@
-import { fetchPostDetail } from "/api/postDetailApi.js";
-import { fetchCommentList } from "/api/commentListApi.js";
+import { fetchPostDetail } from "/api/postApi.js";
+import { fetchAddComment, fetchCommentList } from "/api/commentApi.js";
 
 import { addHeader } from "/components/layout/header/header.js";
 import { addFooter } from "/components/layout/footer/footer.js";
@@ -82,6 +82,7 @@ function renderPostDetail(data) {
 let lastFetchId = null;
 const limit = 5;
 
+// 인피니트 스크롤을 위한 스크롤 이벤트 핸들러
 const onScroll = (e, postId) => {
   const { scrollTop, scrollHeight, clientHeight } = e.target;
 
@@ -90,6 +91,7 @@ const onScroll = (e, postId) => {
   }
 };
 
+// 댓글 목록을 불러와서 삽입하는 함수
 async function loadComment(postId) {
   try {
     const result = await fetchCommentList(
@@ -115,6 +117,42 @@ async function loadComment(postId) {
   }
 }
 
+// 댓글 작성 시 댓글을 생성하고 댓글 목록을 새로고침하는 제출 이벤트 핸들러
+const onCommentSubmit = async (e, postId) => {
+  try {
+    const content = document.getElementById("comment-content").value.trim();
+
+    const response = await fetchAddComment(
+      postId,
+      window.sessionStorage.getItem("userId"),
+      content
+    );
+
+    if (response.code !== 201) {
+      console.error("Adding comment failed: ", response);
+      return;
+    }
+
+    document.getElementById("comment-list-container").innerHTML = "";
+
+    lastFetchId = null;
+
+    loadComment(postId);
+
+    document.getElementById("comment-content").value = "";
+
+    document
+      .getElementById("comment-list-container")
+      .addEventListener("scroll", (e) => onScroll(e, postId));
+  } catch (error) {
+    console.error("Adding comment failed: ", error);
+    return;
+  }
+};
+
+// 댓글 내용 입력 받는 이벤트 핸들러
+// 댓글 추가 api 호출하고 댓글 아이템 추가하는 함수
+
 addHeader();
 addFooter();
 
@@ -129,5 +167,9 @@ loadComment(postId);
 document
   .getElementById("comment-list-container")
   .addEventListener("scroll", (e) => onScroll(e, postId));
+
+document
+  .getElementById("comment-submit-btn")
+  .addEventListener("click", (e) => onCommentSubmit(e, postId));
 
 export { getPostDetail };
