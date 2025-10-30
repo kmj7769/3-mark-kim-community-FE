@@ -4,6 +4,7 @@
   display: flex;
   align-items: flex-start;
   margin-bottom: 22px;
+  position: relative; /* 자식 위치 조정용 */
   font-family: "Noto Sans KR", sans-serif;
 }
 .comment-profile {
@@ -15,10 +16,13 @@
   border: 1px solid #ececec;
   margin-right: 14px;
 }
+/* 프로필 이미지와 내용은 왼쪽에 띄우고, 버튼은 오른쪽 하단에 오도록 하는 위치 지정 */
 .comment-body {
   flex: 1;
   font-family: "Noto Sans KR", sans-serif;
+  padding-right: 60px; /* 너비가 겹치지 않게 여유 공간 */
 }
+
 .comment-info {
   font-size: 0.97rem;
   color: #888;
@@ -46,10 +50,19 @@
   word-break: break-all;
   font-family: "Noto Sans KR", sans-serif;
 }
+/* 버튼 영역을 오른쪽 하단에 고정 */
 .comment-action-btns {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
   display: flex;
   gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out;
   font-family: "Noto Sans KR", sans-serif;
+  flex-direction: row; /* 가로 배치 */
+  z-index: 2; /* 겹침 방지 */
 }
 .comment-edit-btn,
 .comment-delete-btn {
@@ -68,4 +81,9 @@
 .comment-delete-btn:hover {
   background: #eee;
   color: #444;
+}
+/* canEdit 또는 canDelete 권한이 있을 때 li에 추가한 클래스 */
+.editable-comment:hover .comment-action-btns {
+  opacity: 1;
+  visibility: visible;
 }
