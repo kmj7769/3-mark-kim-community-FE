@@ -101,6 +101,9 @@ async function loadComment(postId) {
       limit
     );
 
+    document.getElementById("comment-count").textContent =
+      result.data.commentCount;
+
     await result.data.comments.forEach((comment) => {
       commentItem("comment-list-container", comment);
     });
