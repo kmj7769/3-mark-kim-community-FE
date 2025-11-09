@@ -4,6 +4,7 @@ async function fetchAddComment(postId, userId, content) {
   try {
     const response = await fetch(backendUrl + `/posts/${postId}/comments`, {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
         userId: userId,
@@ -33,6 +34,7 @@ async function fetchCommentList(postId, userId, lastFetchId, limit) {
       backendUrl + `/posts/${postId}/comments` + requestParam,
       {
         method: "GET",
+        credentials: "include",
         headers: {
           userId: userId,
         },

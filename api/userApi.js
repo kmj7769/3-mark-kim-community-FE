@@ -25,6 +25,7 @@ async function fetchUserInfo(userId) {
   try {
     const response = await fetch(backendUrl + `/users?userId=${userId}`, {
       method: "GET",
+      credentials: "include",
     });
 
     if (response.status !== 200) {

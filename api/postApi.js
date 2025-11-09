@@ -10,6 +10,7 @@ async function fetchPostList(lastFetchId, limit) {
 
     const response = await fetch(backendUrl + uri, {
       method: "GET",
+      credentials: "include",
     });
 
     if (response.status !== 200) {
@@ -27,6 +28,7 @@ async function fetchPostDetail(postId, userId) {
   try {
     const response = await fetch(backendUrl + `/posts/${postId}`, {
       method: "GET",
+      credentials: "include",
       headers: {
         userId: userId,
       },

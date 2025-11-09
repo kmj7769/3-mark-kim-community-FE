@@ -5,6 +5,7 @@ async function fetchLogin(email, password) {
   try {
     const response = await fetch(backendUrl + "/auth", {
       method: "POST",
+      credentials: "include",
       headers: {
         "Content-Type": "application/json",
       },
