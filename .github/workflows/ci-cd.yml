@@ -52,6 +52,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Github Action Runner Public IP
+        id: runner-ip
+        uses: haythem/public-ip@v1.3
+
+      - name: Allow SSH Access from Runner
+        run: |
+          aws ec2 authorize-security-group-ingress \
+            --group-id ${{ secrets.SECURITY_GROUP_ID }} \
+            --protocol tcp \
+            --port 22 \
+            -- cidr ${{ steps.runner-ip.outputs.ipv4 }}/32 || echo "Exists already"
+
       - name: Prepare SSH Key
         run: |
           mkdir -p ~/.ssh
