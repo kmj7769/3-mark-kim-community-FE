@@ -35,7 +35,7 @@ jobs:
       - name: Create config.js
         run: |
           mkdir -p config
-          echo "${{ secrets.FRONTEND_CONFIG_JS }}" > config/config.js
+          echo "export const backendUrl = '${{ secrets.BACKEND_URL }}';" > config/config.js
 
       - name: Docker Hub Login
         uses: docker/login-action@v3
