@@ -150,6 +150,21 @@ body {
   cursor: pointer;
   font-family: "Noto Sans KR", sans-serif;
 }
+/* 기존 .post-detail-meta-box 아래에 추가 */
+
+#like-btn.liked {
+  background: #ffe4ec;
+  color: #e94676;
+}
+
+#like-btn.liked .meta-count {
+  color: #e94676;
+}
+
+#like-btn.liked .meta-label {
+  color: #e94676;
+}
+
 .meta-count {
   font-weight: 600;
   font-size: 1.25rem;

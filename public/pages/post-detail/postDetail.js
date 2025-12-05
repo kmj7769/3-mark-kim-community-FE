@@ -1,5 +1,6 @@
 import { fetchPostDetail } from "/api/postApi.js";
 import { fetchAddComment, fetchCommentList } from "/api/commentApi.js";
+import { fetchCreateLike, fetchDeleteLike } from "/api/likeApi.js";
 
 import { addHeader } from "/components/layout/header/header.js";
 import { addFooter } from "/components/layout/footer/footer.js";
@@ -30,8 +31,12 @@ async function getPostDetail(postId) {
   }
 }
 
+let postDetailData = null;
+
 // html에 게시글 상세 정보를 동적으로 삽입
 function renderPostDetail(data) {
+  postDetailData = data;
+
   document.getElementById("post-author-name").textContent = data.userNickname;
   document.getElementById("post-date").textContent = data.createdAt;
   document.getElementById("post-title").textContent = data.title;
@@ -153,6 +158,45 @@ const onCommentSubmit = async (e, postId) => {
   }
 };
 
+// 좋아요 버튼 클릭 핸들러
+const onLikeClick = async (postId) => {
+  const likeBtn = document.getElementById("like-btn");
+  const likeCountEl = document.getElementById("like-count");
+
+  if (!postDetailData) return;
+
+  try {
+    // 현재 liked 상태에 따라 create / delete 호출
+    if (postDetailData.liked) {
+      const res = await fetchDeleteLike(postId);
+
+      if (res.code === 200) {
+        postDetailData.liked = false;
+        postDetailData.likeCount = Math.max(0, postDetailData.likeCount - 1);
+
+        likeBtn.classList.remove("liked");
+        likeCountEl.textContent = postDetailData.likeCount;
+      } else {
+        console.error("Delete like failed:", res);
+      }
+    } else {
+      const res = await fetchCreateLike(postId);
+
+      if (res.code === 201) {
+        postDetailData.liked = true;
+        postDetailData.likeCount += 1;
+
+        likeBtn.classList.add("liked");
+        likeCountEl.textContent = postDetailData.likeCount;
+      } else {
+        console.error("Create like failed:", res);
+      }
+    }
+  } catch (error) {
+    console.error("Like toggle error:", error);
+  }
+};
+
 // 댓글 내용 입력 받는 이벤트 핸들러
 // 댓글 추가 api 호출하고 댓글 아이템 추가하는 함수
 
@@ -174,5 +218,10 @@ document
 document
   .getElementById("comment-submit-btn")
   .addEventListener("click", (e) => onCommentSubmit(e, postId));
+
+// 좋아요 버튼 이벤트 등록
+document
+  .getElementById("like-btn")
+  .addEventListener("click", () => onLikeClick(postId));
 
 export { getPostDetail };
