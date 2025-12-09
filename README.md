@@ -29,7 +29,7 @@
 
 ### 사용 방법
 
-<video controls src="시연 영상.mov" title="Title"></video>
+https://github.com/user-attachments/assets/88ea86a5-3b42-4773-8967-45a7b9efded3
 
 ### 기술 스택
 
