@@ -87,3 +87,67 @@
   opacity: 1;
   visibility: visible;
 }
+
+/* 수정 모드 영역 */
+.comment-edit-box {
+  width: 100%;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.comment-edit-textarea {
+  width: 95%; /* 패딩 고려 */
+  min-height: 60px;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+}
+
+.comment-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.edit-confirm-btn,
+.edit-cancel-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
+  transition: all 0.2s;
+}
+
+.edit-confirm-btn {
+  background: #e94676;
+  color: #fff;
+  border: none;
+}
+.edit-confirm-btn:disabled {
+  background: #fbd0dd; /* 비활성화 색상 */
+  cursor: not-allowed;
+}
+.edit-confirm-btn:not(:disabled):hover {
+  background: #d53c6a;
+}
+
+.edit-cancel-btn {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  color: #666;
+}
+.edit-cancel-btn:hover {
+  background: #eee;
+}
+
+/* 수정 중일 때 기존 내용과 액션 버튼 숨김 처리를 위한 유틸리티 클래스 */
+.hidden {
+  display: none !important;
+}

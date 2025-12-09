@@ -99,18 +99,13 @@ const onScroll = (e, postId) => {
 // 댓글 목록을 불러와서 삽입하는 함수
 async function loadComment(postId) {
   try {
-    const result = await fetchCommentList(
-      postId,
-      window.sessionStorage.getItem("userId"),
-      lastFetchId,
-      limit
-    );
+    const result = await fetchCommentList(postId, lastFetchId, limit);
 
     document.getElementById("comment-count").textContent =
       result.data.commentCount;
 
     await result.data.comments.forEach((comment) => {
-      commentItem("comment-list-container", comment);
+      commentItem("comment-list-container", comment, postId);
     });
 
     if (result.data.lastFetchId == null) {
@@ -130,11 +125,7 @@ const onCommentSubmit = async (e, postId) => {
   try {
     const content = document.getElementById("comment-content").value.trim();
 
-    const response = await fetchAddComment(
-      postId,
-      window.sessionStorage.getItem("userId"),
-      content
-    );
+    const response = await fetchAddComment(postId, content);
 
     if (response.code !== 201) {
       console.error("Adding comment failed: ", response);
