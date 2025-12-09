@@ -29,9 +29,6 @@ async function fetchPostDetail(postId, userId) {
     const response = await fetch(backendUrl + `/posts/${postId}`, {
       method: "GET",
       credentials: "include",
-      headers: {
-        userId: userId,
-      },
     });
 
     if (!response.ok) {
@@ -45,4 +42,30 @@ async function fetchPostDetail(postId, userId) {
   }
 }
 
-export { fetchPostList, fetchPostDetail };
+async function fetchUploadPost(formData) {
+  try {
+    const response = await fetch(backendUrl + "/posts", {
+      method: "POST",
+      credentials: "include",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: formData.get("title"),
+        content: formData.get("content"),
+        images: null /* formData.get("images") */, // 추후 pre-signed url로 수정
+      }),
+    });
+
+    if (response.status !== 201) {
+      throw new Error("Network response was not ok");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching upload post", error);
+    throw error;
+  }
+}
+
+export { fetchPostList, fetchPostDetail, fetchUploadPost };

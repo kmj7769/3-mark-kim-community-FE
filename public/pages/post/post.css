@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap");
+
+body {
+  background: #f6f6f6;
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.post-add-main {
+  margin-top: 62px; /* 헤더 높이 고려 */
+  padding: 40px 0 90px 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+}
+
+.post-form-section {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+.page-title {
+  margin: 0 0 24px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.post-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 14px;
+  font-size: 1rem;
+  font-family: "Noto Sans KR", sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.post-input::placeholder {
+  color: #bbb;
+}
+
+.post-input:focus {
+  border-color: #e94676; /* 포커스 시 포인트 컬러 */
+}
+
+.title-input {
+  font-weight: 600;
+}
+
+.content-textarea {
+  min-height: 200px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* 이미지 업로드 영역 */
+.image-upload-container {
+  margin-bottom: 30px;
+}
+
+.upload-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.upload-label {
+  font-weight: 500;
+  color: #444;
+}
+
+.upload-count {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.upload-box {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* 이미지가 많으면 가로 스크롤 */
+  padding-bottom: 8px; /* 스크롤바 여유 */
+}
+
+/* 스크롤바 커스텀 (선택사항) */
+.upload-box::-webkit-scrollbar {
+  height: 6px;
+}
+.upload-box::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 3px;
+}
+
+.file-upload-btn {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #fafafa;
+  color: #888;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.file-upload-btn:hover {
+  background: #f0f0f0;
+  border-color: #bbb;
+}
+
+/* 미리보기 아이템 */
+.preview-item {
+  position: relative; /* 자식 요소 위치 기준 */
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  overflow: hidden;
+  z-index: 1; /* 기본 레벨 */
+}
+
+.preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 삭제 버튼 (X) */
+.preview-delete-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  /* 이미지보다 위에 오도록 설정 */
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.preview-delete-btn:hover {
+  background: rgba(233, 70, 118, 0.9); /* 호버 시 포인트 컬러 */
+}
+
+.upload-guide {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* 등록 버튼 */
+.form-actions {
+  margin-top: 10px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #e94676; /* 요청하신 스크린샷의 포인트 컬러 */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.submit-btn:hover {
+  background: #d53c6a;
+}
+
+.submit-btn:disabled {
+  background: #fbd0dd;
+  cursor: not-allowed;
+}

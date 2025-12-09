@@ -1,6 +1,66 @@
-<html>
-  <header>
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>게시글 작성</title>
-    <h2>게시글 작성</h2>
-  </header>
+    <link rel="stylesheet" href="/components/layout/header/header.css" />
+    <link rel="stylesheet" href="/pages/post/post.css" />
+  </head>
+  <body>
+    <main class="post-add-main">
+      <section class="post-form-section">
+        <h2 class="page-title">게시글 작성</h2>
+
+        <div class="input-group">
+          <input
+            type="text"
+            id="post-title"
+            class="post-input title-input"
+            placeholder="제목을 입력해주세요."
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="input-group">
+          <textarea
+            id="post-content"
+            class="post-input content-textarea"
+            placeholder="내용을 입력해주세요."
+          ></textarea>
+        </div>
+
+        <div class="image-upload-container">
+          <div class="upload-header">
+            <span class="upload-label">이미지 첨부</span>
+            <span class="upload-count"
+              ><span id="current-img-count">0</span>/10</span
+            >
+          </div>
+
+          <div class="upload-box">
+            <label for="file-input" class="file-upload-btn">
+              <span>+ 추가</span>
+            </label>
+            <input
+              type="file"
+              id="file-input"
+              accept="image/*"
+              multiple
+              style="display: none"
+            />
+
+            <div id="image-preview-list" class="image-preview-list"></div>
+          </div>
+          <p class="upload-guide">이미지는 최대 10장까지 업로드 가능합니다.</p>
+        </div>
+
+        <div class="form-actions">
+          <button id="submit-btn" class="submit-btn">등록하기</button>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/pages/post/post.js"></script>
+  </body>
 </html>
