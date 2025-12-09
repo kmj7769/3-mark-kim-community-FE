@@ -86,6 +86,7 @@ function renderPostDetail(data) {
 
 let lastFetchId = null;
 const limit = 5;
+let isLoading = false;
 
 // 인피니트 스크롤을 위한 스크롤 이벤트 핸들러
 const onScroll = (e, postId) => {
@@ -98,6 +99,10 @@ const onScroll = (e, postId) => {
 
 // 댓글 목록을 불러와서 삽입하는 함수
 async function loadComment(postId) {
+  if (isLoading) return;
+
+  isLoading = true;
+
   try {
     const result = await fetchCommentList(postId, lastFetchId, limit);
 
@@ -117,6 +122,8 @@ async function loadComment(postId) {
     }
   } catch (error) {
     console.error("Retrieving comment list failed:", error);
+  } finally {
+    isLoading = false;
   }
 }
 

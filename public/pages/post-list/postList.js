@@ -10,6 +10,7 @@ addFooter();
 
 let lastFetchId = null;
 const limit = 15;
+let isLoading = false;
 
 const onScroll = (e) => {
   const { scrollTop, scrollHeight, clientHeight } = e.target;
@@ -20,6 +21,10 @@ const onScroll = (e) => {
 };
 
 async function loadPost() {
+  if (isLoading) return;
+
+  isLoading = true;
+
   try {
     const result = await fetchPostList(lastFetchId, limit);
 
@@ -36,6 +41,8 @@ async function loadPost() {
     }
   } catch (error) {
     console.error("Retrieving post list failed:", error);
+  } finally {
+    isLoading = false;
   }
 }
 
